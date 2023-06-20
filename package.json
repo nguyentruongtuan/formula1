@@ -1,0 +1,40 @@
+{
+  "name": "formula1",
+  "version": "1.0.0",
+  "description": "Restful API system for formula1 racing system ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "node ./dist/app.js"
+  },
+  "keywords": [
+    "formula1",
+    "restful",
+    "koajs"
+  ],
+  "author": "tuan nguyen <denny.truongnguyen@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@types/koa": "^2.13.6",
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/koa-route": "^3.2.5",
+    "@types/koa-router": "^7.4.4",
+    "@types/mongoose": "^5.11.97",
+    "amqplib": "^0.10.3",
+    "env-var": "^7.3.1",
+    "inversify": "^6.0.1",
+    "koa": "^2.14.2",
+    "koa-body": "^6.0.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^12.0.0",
+    "mongo-uri-builder": "^4.0.0",
+    "mongodb": "^5.4.0",
+    "typescript": "^5.0.4"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.59.5",
+    "@typescript-eslint/parser": "^5.59.5",
+    "eslint": "^8.40.0"
+  }
+}
