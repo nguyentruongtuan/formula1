@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "start": "node ./dist/app.js"
+    "start": "node ./dist/app.js",
+    "start:debug": "node --inspect=0.0.0.0 ./dist/app.js"
   },
   "keywords": [
     "formula1",
@@ -22,16 +23,20 @@
     "@types/koa-router": "^7.4.4",
     "@types/mongoose": "^5.11.97",
     "amqplib": "^0.10.3",
+    "class-validator": "^0.14.0",
     "env-var": "^7.3.1",
     "inversify": "^6.0.1",
     "koa": "^2.14.2",
     "koa-body": "^6.0.1",
     "koa-bodyparser": "^4.3.0",
+    "koa-proxies": "^0.12.3",
     "koa-router": "^12.0.0",
     "module-alias": "^2.2.3",
     "mongo-uri-builder": "^4.0.0",
     "mongodb": "^5.4.0",
+    "mongoose": "^7.3.0",
     "reflect-metadata": "^0.1.13",
+    "swagger-ui": "^5.1.0",
     "typescript": "^5.0.4"
   },
   "devDependencies": {
@@ -40,7 +45,9 @@
     "eslint": "^8.40.0"
   },
   "_moduleAliases": {
+    "src": "dist",
     "@bootstrap": "dist/bootstrap",
+    "@config": "dist/config",
     "@controller": "dist/controller",
     "@repository": "dist/repository",
     "@gateway": "dist/gateway",

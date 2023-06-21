@@ -19,7 +19,9 @@
     "emitDecoratorMetadata": true,
     "baseUrl": ".",
     "paths": {
+      "src/*": ["./src/*"],
       "@bootstrap/*": ["./src/bootstrap/*"],
+      "@config/*": ["./src/config/*"],
       "@controller/*": ["./src/controller/*"],
       "@gateway/*": ["./src/gateway/*"],
       "@repository/*": ["./src/repository/*"],

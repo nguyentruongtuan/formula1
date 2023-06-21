@@ -2,6 +2,7 @@ import { inject, injectable } from "inversify"
 import KoaRouter from "koa-router"
 import TYPES from "@bootstrap/types"
 import { TeamController } from "@controller/team-controller"
+import { CreateTeamRequest } from "src/requests/create-team-request"
 
 
 @injectable()
@@ -17,6 +18,7 @@ export class AppRouter {
   public init() {
 
     const router = new KoaRouter()
+    router.prefix('/api')
 
     router.get('/teams', async (ctx, next) => {
 
@@ -26,6 +28,12 @@ export class AppRouter {
       next()
     })
 
-    return router.routes()
+    router.post('/teams', async (ctx, next) => {
+      const teams = await this.teamController.createTeam(ctx.request.body as CreateTeamRequest)
+      ctx.body = teams
+      next()
+    })
+
+    return router
   }
 }
