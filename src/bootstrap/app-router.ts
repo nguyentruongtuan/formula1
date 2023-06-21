@@ -1,20 +1,31 @@
+import { inject, injectable } from "inversify"
 import KoaRouter from "koa-router"
+import TYPES from "@bootstrap/types"
+import { TeamController } from "@controller/team-controller"
 
 
-export class AppRouter extends KoaRouter {
+@injectable()
+export class AppRouter {
 
 
-  constructor() {
-    super()
+  constructor(
+    @inject(TYPES.TeamController) private readonly teamController : TeamController
+  ) {
     this.init()
   }
 
   public init() {
 
-    this.get('/', async (ctx, next) => {
+    const router = new KoaRouter()
 
-      ctx.body = 'Hello'
+    router.get('/teams', async (ctx, next) => {
+
+      const teams = await this.teamController.getTeams()
+
+      ctx.body = teams
       next()
     })
+
+    return router.routes()
   }
 }
