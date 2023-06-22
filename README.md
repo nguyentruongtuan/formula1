@@ -6,8 +6,53 @@ A demo restful API
 
 ### With Docker
 
-- Open docker-compose.yml file and replace default configuration info 
+- create docker-compose.yml file
+- Adding default content
+  ```
+    version: '3.1'
 
+
+    services:
+
+      db:
+        image: mongo:5
+        ports:
+          - 27017:27017
+        restart: always
+        environment:
+          MONGO_INITDB_ROOT_USERNAME: root
+          MONGO_INITDB_ROOT_PASSWORD: 123123
+          MONGO_INITDB_DATABASE: formula1
+
+      app:
+        build:
+          context: ./app
+          dockerfile: Dockerfile.dev
+        environment:
+          - APP_PORT=3000
+          - DATABASE_PORT=27017
+          - DATABASE_USERNAME=root
+          - DATABASE_PASSWORD=123123
+          - DATABASE_HOST=db
+          - DATABASE_DATABASE=formula1
+        ports:
+          - 3000:3000
+          - 9229:9229
+        depends_on:
+          - db
+        links:
+          - "swagger"
+
+      swagger:
+        image: swaggerapi/swagger-ui
+        environment:
+          - SWAGGER_JSON=/app/swagger.yaml
+          - BASE_URL=/swagger
+        volumes:
+          - ./swagger:/app
+
+    ```
+- Replace default environment config
 - Run command
   ```
   docker compose up -d
@@ -26,4 +71,4 @@ A demo restful API
 - Access url http://localhost:3000 
 
 **Note**
-replace 3000 with config port at step 1
+replace 3000 with config port at step 1 when access url

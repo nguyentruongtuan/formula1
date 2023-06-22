@@ -9,7 +9,7 @@ export function *errorHandler (next) {
     if (err instanceof ValidationError) {
 
       this.body = err.message;
-      this.app.emit('error', err, this);
+      this.status = 400
     } else {
       throw err
     }

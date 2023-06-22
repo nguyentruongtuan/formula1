@@ -13,7 +13,21 @@
     "skipLibCheck": true,
     "useUnknownInCatchVariables": false,
     "strictNullChecks": false,
-    "allowJs": true
+    "allowJs": true,
+    "types": ["reflect-metadata"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["./src/*"],
+      "@bootstrap/*": ["./src/bootstrap/*"],
+      "@usecase/*": ["./src/usecase/*"],
+      "@config/*": ["./src/config/*"],
+      "@controller/*": ["./src/controller/*"],
+      "@gateway/*": ["./src/gateway/*"],
+      "@repository/*": ["./src/repository/*"],
+      "@model/*": ["./src/model/*"]
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["**/*.spec.ts"]
