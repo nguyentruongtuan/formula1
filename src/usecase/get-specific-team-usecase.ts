@@ -11,7 +11,7 @@ export class GetSpecificTeamUsecase {
     @inject(TYPES.TeamRepository) private readonly teamRepository: TeamRepository
   ) { }
 
-  public async execute(id: Types.ObjectId): Promise<Team> {
+  public async execute(id: string): Promise<Team> {
     return this.teamRepository.getTeamById(id)
   }
 
