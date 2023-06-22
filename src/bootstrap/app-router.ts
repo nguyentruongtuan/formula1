@@ -2,8 +2,8 @@ import { inject, injectable } from "inversify"
 import KoaRouter from "koa-router"
 import TYPES from "@bootstrap/types"
 import { TeamController } from "@controller/team-controller"
-import { CreateTeamRequest } from "src/requests/create-team-request"
 import { DriverController } from "src/controller/driver-controller"
+import { __protected } from "src/middleware/auth"
 
 
 @injectable()
@@ -21,6 +21,7 @@ export class AppRouter {
 
     const router = new KoaRouter()
     router.prefix('/api')
+    router.use(__protected)
 
   
     router.get('/teams', async (ctx) => { ctx.body = await this.teamController.getTeams() })

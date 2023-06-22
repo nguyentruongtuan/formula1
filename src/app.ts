@@ -8,12 +8,15 @@ import { MongoDB } from './service/mongodb'
 import container from '@bootstrap/container'
 import TYPES from '@bootstrap/types'
 import proxy from 'koa-proxies'
+import {bootstrapFirebase} from '@bootstrap/firebase'
 
 
 async function bootstrap() {
 
   const db = new MongoDB()
   await db.connect()
+
+  bootstrapFirebase()
 
   const app = new koa()
 
