@@ -20,19 +20,12 @@ export class AppRouter {
     const router = new KoaRouter()
     router.prefix('/api')
 
-    router.get('/teams', async (ctx, next) => {
-
-      const teams = await this.teamController.getTeams()
-
-      ctx.body = teams
-      next()
-    })
-
-    router.post('/teams', async (ctx, next) => {
-      const teams = await this.teamController.createTeam(ctx.request.body as CreateTeamRequest)
-      ctx.body = teams
-      next()
-    })
+  
+    router.get('/teams', async (ctx) => { ctx.body = await this.teamController.getTeams() })
+    router.post('/teams', async (ctx) => { ctx.body = await this.teamController.createTeam(ctx) })
+    router.delete('/teams/:id', async (ctx) => { ctx.body = await this.teamController.deleteTeam(ctx) })
+    router.put('/teams/:id', async (ctx) => { ctx.body = await this.teamController.updateTeam(ctx) })
+    router.get('/teams/:id', async (ctx) => { ctx.body = await this.teamController.getTeam(ctx) })
 
     return router
   }

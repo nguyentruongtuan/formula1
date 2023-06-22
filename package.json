@@ -47,6 +47,7 @@
   "_moduleAliases": {
     "src": "dist",
     "@bootstrap": "dist/bootstrap",
+    "@usecase": "dist/usecase",
     "@config": "dist/config",
     "@controller": "dist/controller",
     "@repository": "dist/repository",
