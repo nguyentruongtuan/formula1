@@ -1,0 +1,12 @@
+import { initializeApp, cert} from 'firebase-admin/app'
+
+export function bootstrapFirebase() {
+  initializeApp({
+    credential: cert({
+      privateKey: '-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCuMRA7Hl9wZ2cu\n+106VpPUJyhPYZcnDb+iwCuRdq+8MYXq7gDxz1JpJuHLD7RNAhh8fBm35uYoPBdi\nbwYy4uIlK5dVB0CE6IQypBGROx+TNYRZF7QEPdgPpB5HMfiiJMuWSWBcnJ3SKDw2\nDvSq8Oy8/NWWMbJ0tLbTpRL0Y0Tz+12CU+xaFtzps1o86WQyO7hJW/zAMaDghQGo\nnNpIf6c2vhEcXnCKXY7d9gcylEaliWEyRBNbSl/hUnW5pvEoT4bAPEud/UoxE4Nx\nh0DDhvj4DxSXkjgsmmxK1uN8GrX5jjejoH2C7e93GDipoufGnQLZVHSBZWx+AV4O\ngRZMn4AfAgMBAAECggEAAYgyiYwsCeo+50dHe9REtJPFMDC+Vy+XXrBF/p+Gm1pS\njTObeoT4rcgTw4KkP7eKM5evBwXW3F+67OvndNpRMHaAfDtcfxuOBH80HSZ7kc97\nFhvpQpt9cC9g7/6QHnNbmKGVYWGKc2chltaG1fU/svtrFxXhnFLCkOLD/RyqZi+6\nD7joSmxPVoB9jrkbcQ7v2sl6Uo0u8a/e9dzXU69NLFZTeAKDxbNvLYwcP/av8hwz\nNS1ob/oov2qwGtDVgojKd3WdHpReKLFdK8vUNZxvCxUeoLqcPf9g6wxJZLRDjcgw\nn0tO2S8vjjFzYqlnuljsFdt+HqfuH9Ds2S/gmTSH8QKBgQDakqdHCsdndqDDYKta\nHdvBdkOUD4f9yFrRfqENcoSJ2prwmYknYP/wbeEOeSta09/9qmmx3oxc8fCqYcZC\nPwvcQ/eE0hAsUy+nahWSf+kx9PdeO1yutFDaeTZbsE/4WKzkIHaUo2r6mG9UjDPi\n1lLC4X0NnEABTmgMrnDnbqh0SwKBgQDMBOr/JR3/1keue3sUT12avpsz6ejAMs5o\nmUiNLf7/UbNKd0r9YpFIBGJXYZZw4h5pIwb3Ku8T0qzMoS/zO71ylzyGZlulH6gM\n5tgvT/Gx6Iy80rAK4znidk+AbW6Z5kd5wnCNhImOdht82Qp4s5lKou6vT+TwXJzA\n5HLgZV52/QKBgG9NcOtnXMWeDh2P85IPVGG+9IjII+sjBMRbpG2xnDaK4I2W0dYA\nujRX79wr7dzxucV16x7NglKuTWymH4yKiGKhJcE4K043CjRJfDS++CQdZ35P4lGA\ntw+Z3AlyzjZcCaadtWTZlteHmmHGh4GCvGBK7SBqKdnAcJHMnufrXNLjAoGBAKoq\nN+8TgFAQ47zOVTv9bm9RJ5ZHNNCKD8sCfpbylEtUU5x6n1t0SQSuU2/af2Yr032R\nr4+cicgY4fPTRXE0lLDtH5hh63JwUvRf3lSn80mWUzxy5k5Oc8tFLs5JeAR5I4iU\n+teugiUGsaqSRL+j3Ol5uGcU1jj8penlIUO0iPPpAoGAEqqwaITqbXqDG0UgGCvE\nrVRHEuaDtRcy8gTGJaGG0t0/x0wmoR89qZkzGTGnzELyT0BpRGaoVHUpNDjGUxYm\nBMoa6bcvu3VrAYGVVKNXH2/E/dbcIYJRj1W7ooN0kp6U/JiTYK9nsVkPEihBNDuQ\nAyg6mjuDHLw05FPgVJoFKNI=\n-----END PRIVATE KEY-----\n',
+      projectId: 'formula1-demo',
+      clientEmail: 'firebase-adminsdk-c55sm@formula1-demo.iam.gserviceaccount.com'
+    })
+  });
+
+}
