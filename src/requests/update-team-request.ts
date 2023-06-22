@@ -1,7 +1,7 @@
 import { Types } from "mongoose"
 
 export class UpdateTeamRequest {
-  id: Types.ObjectId
+  id: string
   fullTeamName: string
   base: string
   teamChief: string

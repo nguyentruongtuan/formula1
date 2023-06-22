@@ -3,6 +3,7 @@ import KoaRouter from "koa-router"
 import TYPES from "@bootstrap/types"
 import { TeamController } from "@controller/team-controller"
 import { CreateTeamRequest } from "src/requests/create-team-request"
+import { DriverController } from "src/controller/driver-controller"
 
 
 @injectable()
@@ -10,7 +11,8 @@ export class AppRouter {
 
 
   constructor(
-    @inject(TYPES.TeamController) private readonly teamController : TeamController
+    @inject(TYPES.TeamController) private readonly teamController : TeamController,
+    @inject(TYPES.DriverController) private readonly driverController : DriverController,
   ) {
     this.init()
   }
@@ -26,6 +28,13 @@ export class AppRouter {
     router.delete('/teams/:id', async (ctx) => { ctx.body = await this.teamController.deleteTeam(ctx) })
     router.put('/teams/:id', async (ctx) => { ctx.body = await this.teamController.updateTeam(ctx) })
     router.get('/teams/:id', async (ctx) => { ctx.body = await this.teamController.getTeam(ctx) })
+
+  
+    router.get('/drivers', async (ctx) => { ctx.body = await this.driverController.getDrivers() })
+    router.post('/drivers', async (ctx) => { ctx.body = await this.driverController.createDriver(ctx) })
+    router.delete('/drivers/:id', async (ctx) => { ctx.body = await this.driverController.deleteDriver(ctx) })
+    router.put('/drivers/:id', async (ctx) => { ctx.body = await this.driverController.updateDriver(ctx) })
+    router.get('/drivers/:id', async (ctx) => { ctx.body = await this.driverController.getDriver(ctx) })
 
     return router
   }

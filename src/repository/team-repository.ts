@@ -9,10 +9,10 @@ import { UpdateTeamRequest } from "src/requests/update-team-request";
 
 export interface TeamRepository {
   getTeams(): Promise<Team[]>
-  getTeamById(id: Types.ObjectId): Promise<Team>
+  getTeamById(id: string): Promise<Team>
   createTeam(request: CreateTeamRequest): Promise<Team>
   updateTeam(request: UpdateTeamRequest): Promise<Team>
-  deleteTeam(id: Types.ObjectId): Promise<void>
+  deleteTeam(id: string): Promise<void>
 }
 
 @injectable()
@@ -26,7 +26,7 @@ export class TeamRepositoryImpl implements TeamRepository {
     return this.teamGateway.getTeams()
   }
 
-  public async getTeamById(id: Types.ObjectId): Promise<Team> {
+  public async getTeamById(id: string): Promise<Team> {
     return this.teamGateway.getTeamById(id)    
   }
 
@@ -34,7 +34,7 @@ export class TeamRepositoryImpl implements TeamRepository {
     return this.teamGateway.createTeam(request)
   }
 
-  public async deleteTeam(id: Types.ObjectId): Promise<void> {
+  public async deleteTeam(id: string): Promise<void> {
     await this.teamGateway.deleteTeam(id)
   }
 

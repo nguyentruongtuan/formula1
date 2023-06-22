@@ -71,4 +71,4 @@ A demo restful API
 - Access url http://localhost:3000 
 
 **Note**
-replace 3000 with config port at step 1 when access url
+replace 3000 with port at config step when access url

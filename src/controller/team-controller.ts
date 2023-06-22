@@ -26,7 +26,7 @@ export class TeamController {
   }
 
   public async getTeam(ctx): Promise<Team> {
-    return this.getSpecificTeamUsecase.execute(new Types.ObjectId(ctx.params.id))
+    return this.getSpecificTeamUsecase.execute(ctx.params.id)
   }
 
   public async createTeam(ctx): Promise<Team> {
@@ -35,7 +35,7 @@ export class TeamController {
   }
 
   public async deleteTeam(ctx): Promise<void> {
-    await this.deleteTeamUseCase.execute( new Types.ObjectId(ctx.params.id) )
+    await this.deleteTeamUseCase.execute(ctx.params.id )
   }
 
   public async updateTeam(ctx): Promise<void> {
