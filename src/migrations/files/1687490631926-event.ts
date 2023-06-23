@@ -2,8 +2,8 @@ import { getDB } from '../utils/db'
 import fs from 'fs'
 import path from 'path'
 
-exports.up = async function (next) {
-
+exports.up = async function () {
+  
   const db = await getDB()
 
   const eventDir = `${__dirname}/../data/events/`
@@ -11,12 +11,9 @@ exports.up = async function (next) {
   const eventFiles = fs.readdirSync(eventDir)
 
   for (const eventFile of eventFiles.filter(f => f.endsWith('.json'))) {
-    // const events = require(path.join(eventDir, eventFile))
-
 
     const events = JSON.parse(fs.readFileSync(path.join(eventDir, eventFile)).toString())
 
-    console.log(events)
     for (const e of events) {
       const raceEvent = await db.collection('raceevents').insertOne({
         cardTitle: e.cardTitle,
@@ -41,10 +38,8 @@ exports.up = async function (next) {
     }
   }
 
-  next()
 }
 
-exports.down = function (next) {
+exports.down = function () {
 
-  next()
 }
