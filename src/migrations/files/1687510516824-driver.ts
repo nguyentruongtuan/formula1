@@ -15,7 +15,6 @@ exports.up = function (next) {
     const driverFiles = fs.readdirSync(driverDir)
     
     const allTeams = await db.collection('teams').find().toArray()
-    console.log(allTeams)
     for (const __file of driverFiles.filter(f => f.endsWith('.json'))) {
 
       const data = JSON.parse(fs.readFileSync(path.join(driverDir, __file)).toString())

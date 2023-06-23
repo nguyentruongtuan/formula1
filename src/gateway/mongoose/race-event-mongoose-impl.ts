@@ -3,7 +3,9 @@ import { RaceEvent, RaceEventModel } from "src/model/race-event"
 import { CreateRaceEventRequest } from "src/requests/create-race-event-request"
 import { UpdateRaceEventRequest } from "src/requests/update-race-event-request"
 import { RaceEventGateway } from "../race-event-gateway"
+import { injectable } from "inversify"
 
+@injectable()
 export class RaceEventMongooseImpl implements RaceEventGateway {
 
 
