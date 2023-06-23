@@ -1,7 +1,6 @@
 import { IsNotEmpty, IsString, Length } from "class-validator"
-import { BaseRequest } from "./base-request"
 
-export class CreateTeamRequest extends BaseRequest {
+export class CreateTeamRequest {
   @IsNotEmpty()
   @IsString()
   fullTeamName: string
