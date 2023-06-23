@@ -17,6 +17,7 @@
     "types": ["reflect-metadata"],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
       "src/*": ["./src/*"],
@@ -29,6 +30,7 @@
       "@model/*": ["./src/model/*"]
     }
   },
-  "include": ["src/**/*"],
+  "hooks": [ "copy-files" ],
+  "include": ["src/**/*", "src/**/*.json"],
   "exclude": ["**/*.spec.ts"]
 }
