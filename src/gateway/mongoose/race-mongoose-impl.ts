@@ -3,7 +3,9 @@ import { CreateRaceRequest } from "src/requests/create-race-request";
 import { UpdateRaceRequest } from "src/requests/update-race-request";
 import { RaceGateway } from "../race-gateway";
 import { Types } from "mongoose";
+import { injectable } from "inversify";
 
+@injectable()
 export class RaceMongooseImpl implements RaceGateway {
 
 

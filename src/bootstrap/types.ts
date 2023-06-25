@@ -26,6 +26,7 @@ const TYPES = {
   RaceEventController: Symbol.for('RaceEventController'),
   GetRaceEventsUsecase: Symbol.for('GetRaceEventsUsecase'),
   GetRaceEventUsecase: Symbol.for('GetRaceEventUsecase'),
+  RaceEventRepository: Symbol.for('RaceEventRepository'),
 
   // ==== Race 
   RaceGateway: Symbol.for('RaceGateway'),
