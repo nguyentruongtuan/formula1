@@ -7,6 +7,7 @@ import { __protected } from "src/middleware/auth"
 import { RaceController } from "src/controller/race-controller"
 import { RaceEventController } from "src/controller/race-event-controller"
 import { RaceResultController } from "src/controller/race-result-controller"
+import { SearchController } from "src/controller/search-controller"
 
 
 @injectable()
@@ -19,6 +20,7 @@ export class AppRouter {
     @inject(TYPES.RaceController) private readonly raceController : RaceController,
     @inject(TYPES.RaceEventController) private readonly raceEventController : RaceEventController,
     @inject(TYPES.RaceResultController) private readonly raceResultController: RaceResultController,
+    @inject(TYPES.SearchController) private readonly searchController: SearchController,
   ) {
     this.init()
   }
@@ -69,6 +71,9 @@ export class AppRouter {
     router.delete('/races/:id', async (ctx) => { ctx.body = await this.raceController.deleteRace(ctx) })
     router.put('/races/:id', async (ctx) => { ctx.body = await this.raceController.updateRace(ctx) })
     router.get('/races/:id', async (ctx) => { ctx.body = await this.raceController.getRace(ctx) })
+    
+    
+    router.get('/search', async (ctx) => { ctx.body = await this.searchController.search(ctx) })
 
     return router
   }

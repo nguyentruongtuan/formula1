@@ -3,12 +3,14 @@ import { RaceResult, RaceResultModel } from "src/model/race-result"
 import { CreateRaceResultRequest } from "src/requests/create-race-result-request"
 import { UpdateRaceResultRequest } from "src/requests/update-race-result-request"
 import { RaceResultGateway } from "../race-result-gateway"
+import { injectable } from "inversify"
 
+@injectable()
 export class RaceResultMongooseImpl implements RaceResultGateway {
 
 
   public async getRaceResults(): Promise<RaceResult[]> {
-    return RaceResultModel.find()
+    return RaceResultModel.find().limit(10)
   }
 
   public async createRaceResult(request: CreateRaceResultRequest): Promise<RaceResult> {

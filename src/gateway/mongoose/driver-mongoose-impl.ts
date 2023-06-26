@@ -9,7 +9,7 @@ import { Types } from "mongoose";
 export class DriverMongooseImpl implements DriverGateway {
 
   public async getDrivers(): Promise<Driver[]> {
-    return DriverModel.find()
+    return DriverModel.find().limit(10)
   }
 
   public async createDriver(request: CreateDriverRequest): Promise<Driver> {

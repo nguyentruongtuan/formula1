@@ -40,6 +40,10 @@ const TYPES = {
   GetRaceResultsUsecase: Symbol.for('GetRaceResultsUsecase'),
   GetRaceResultUsecase: Symbol.for('GetRaceResultUsecase'),
   RaceResultRepository: Symbol.for('RaceResultRepository'),
+
+
+  // ==== Search
+  SearchController: Symbol.for('SearchController')
 }
 
 export default TYPES

@@ -37,6 +37,7 @@ import { RaceEventController } from 'src/controller/race-event-controller'
 import { RaceResultController } from 'src/controller/race-result-controller'
 import { RaceEventRepository, RaceEventRepositoryImpl } from 'src/repository/race-event-repository'
 import { RaceResultRepository, RaceResultRepositoryImpl } from 'src/repository/race-result-repository'
+import { SearchController } from 'src/controller/search-controller'
 
 
 const container = new Container()
@@ -48,6 +49,7 @@ container.bind<DriverController>(TYPES.DriverController).to(DriverController)
 container.bind<RaceController>(TYPES.RaceController).to(RaceController)
 container.bind<RaceEventController>(TYPES.RaceEventController).to(RaceEventController)
 container.bind<RaceResultController>(TYPES.RaceResultController).to(RaceResultController)
+container.bind<SearchController>(TYPES.SearchController).to(SearchController)
 
 container.bind<TeamRepository>(TYPES.TeamRepository).to(TeamRepositoryImpl)
 container.bind<DriverRepository>(TYPES.DriverRepository).to(DriverRepositoryImpl)
