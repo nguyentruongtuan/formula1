@@ -9,7 +9,7 @@ import { Types } from "mongoose"
 export class TeamMongooseImpl implements TeamGateway {
 
   public async getTeams(): Promise<Team[]> {
-    const teams = TeamModel.find()
+    const teams = TeamModel.find().limit(10)
     return teams
   }
 

@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "start": "node ./dist/app.js",
-    "start:debug": "node --inspect=0.0.0.0 ./dist/app.js"
+    "start:debug": "node --inspect=0.0.0.0 ./dist/app.js",
+    "migrate:create": "migrate create --migrations-dir=./src/migrations/files --template-file ./src/migrations/utils/template.ts",
+    "migrate:up": "migrate up --migrations-dir=./dist/migrations/files --matches=*.js --store=./dist/migrations/utils/storage.js"
   },
   "keywords": [
     "formula1",
@@ -32,6 +34,8 @@
     "koa-bodyparser": "^4.3.0",
     "koa-proxies": "^0.12.3",
     "koa-router": "^12.0.0",
+    "lodash": "^4.17.21",
+    "migrate": "^2.0.0",
     "module-alias": "^2.2.3",
     "mongo-uri-builder": "^4.0.0",
     "mongodb": "^5.4.0",
