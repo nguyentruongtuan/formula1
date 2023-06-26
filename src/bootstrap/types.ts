@@ -1,6 +1,7 @@
 const TYPES = {
   AppRouter: Symbol.for('AppRouter'),
 
+  // ==== Team 
   TeamController: Symbol.for('TeamController'),
   TeamRepository: Symbol.for('TeamRepository'),
   TeamGateway: Symbol.for('TeamGateway'),
@@ -10,6 +11,7 @@ const TYPES = {
   UpdateTeamUsecase: Symbol.for('UpdateTeamUsecase'),
   GetSpecificTeamUsecase: Symbol.for('GetSpecificTeamUsecase'),
 
+  // ==== Driver
   DriverController: Symbol.for('DriverController'),
   DriverRepository: Symbol.for('DriverRepository'),
   CreateDriverUsecase: Symbol.for('CreateDriverUsecase'),
@@ -18,6 +20,33 @@ const TYPES = {
   DeleteDriverUsecase: Symbol.for('DeleteDriverUsecase'),
   DriverGateway: Symbol.for('DriverGateway'),
   UpdateDriverUsecase: Symbol.for('UpdateDriverUsecase'),
+
+  // ==== Race event
+  RaceEventGateway: Symbol.for('RaceEventGateway'),
+  RaceEventController: Symbol.for('RaceEventController'),
+  GetRaceEventsUsecase: Symbol.for('GetRaceEventsUsecase'),
+  GetRaceEventUsecase: Symbol.for('GetRaceEventUsecase'),
+  RaceEventRepository: Symbol.for('RaceEventRepository'),
+
+  // ==== Race 
+  RaceGateway: Symbol.for('RaceGateway'),
+  RaceController: Symbol.for('RaceController'),
+  GetRacesUsecase: Symbol.for('GetRacesUsecase'),
+  GetRaceUsecase: Symbol.for('GetRaceUsecase'),
+
+  // ==== Race result
+  RaceResultGateway: Symbol.for('RaceResultGateway'),
+  RaceResultController: Symbol.for('RaceResultController'),
+  GetRaceResultsUsecase: Symbol.for('GetRaceResultsUsecase'),
+  GetRaceResultUsecase: Symbol.for('GetRaceResultUsecase'),
+  RaceResultRepository: Symbol.for('RaceResultRepository'),
+  SearchRepository: Symbol.for('SearchRepository'),
+
+
+  // ==== Search
+  SearchController: Symbol.for('SearchController'),
+  SearchEntitiesUsecase: Symbol.for('SearchEntitiesUsecase'),
+  EntitySeachGateway: Symbol.for('EntitySeachGateway')
 }
 
 export default TYPES

@@ -1,0 +1,46 @@
+{
+  "name": "Fernando Alonso",
+  "biography": "Biography\n\nMichael Schumacher was the undisputed king of Formula 1 in the early 2000s, picking up wins and championships at a rate that was simply unheard of at the time. It was going to take someone very special to topple the Ferrari legend from his throne – and that it was Fernando Alonso who did it, tells you all you need to know about the Spaniard.\nFiercely competitive, Alonso is not shy about his talent, rating himself as 9/10 “in everything”, and few in the know would disagree, with his performances in F1 characterised by blistering speed, brilliant tactical thinking, exemplary race craft, a razor-sharp eye for detail and a relentless determination to win.\nA serial record breaker in his early days, he was – at one time – F1’s youngest polesitter, race winner, world champion and double world champion as he gobbled up success with the Renault team. Even Alonso couldn’t continue that amazing run in his later career though, failing to add another title to his collection despite spells at McLaren and Ferrari.\nBut after two years away from Formula 1 racing – and with two Le Mans wins in his pocket – Alonso returned with Alpine in 2021. His speed and determination undiminished, he was back on the podium that year, but frustrated by poor reliability – and the lack of a long-term contract – the following season, he opted to jump ship once more.\nNow Alonso hopes Aston Martin will be the team with whom he finally returns to winning ways, as he has unfinished business with F1…",
+  "stat": [
+    {
+      "statKey": "Team",
+      "statValue": "Aston Martin"
+    },
+    {
+      "statKey": "Country",
+      "statValue": "Spain"
+    },
+    {
+      "statKey": "Podiums",
+      "statValue": "104"
+    },
+    {
+      "statKey": "Points",
+      "statValue": "2178"
+    },
+    {
+      "statKey": "Grands Prix entered",
+      "statValue": "366"
+    },
+    {
+      "statKey": "World Championships",
+      "statValue": "2"
+    },
+    {
+      "statKey": "Highest race finish",
+      "statValue": "1 (x32)"
+    },
+    {
+      "statKey": "Highest grid position",
+      "statValue": "1"
+    },
+    {
+      "statKey": "Date of birth",
+      "statValue": "29/07/1981"
+    },
+    {
+      "statKey": "Place of birth",
+      "statValue": "Oviedo, Spain"
+    }
+  ]
+}
