@@ -10,7 +10,7 @@ export class RaceEventMongooseImpl implements RaceEventGateway {
 
 
   public async getRaceEvents(): Promise<RaceEvent[]> {
-    return RaceEventModel.find()
+    return RaceEventModel.find().limit(10)
   }
 
   public async createRaceEvent(request: CreateRaceEventRequest): Promise<RaceEvent> {

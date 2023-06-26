@@ -1,8 +1,6 @@
 import { inject, injectable } from "inversify";
 import TYPES from "src/bootstrap/types";
 import { RaceResult } from "src/model/race-result";
-import { CreateRaceResultRequest } from "src/requests/create-race-result-request";
-import { UpdateRaceResultRequest } from "src/requests/update-race-result-request";
 import { GetRaceResultUsecase } from "src/usecase/get-race-result-usecase";
 import { GetRaceResultsUsecase } from "src/usecase/get-race-results-usecase";
 
