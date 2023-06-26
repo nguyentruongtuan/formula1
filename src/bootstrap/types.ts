@@ -39,6 +39,7 @@ const TYPES = {
   RaceResultController: Symbol.for('RaceResultController'),
   GetRaceResultsUsecase: Symbol.for('GetRaceResultsUsecase'),
   GetRaceResultUsecase: Symbol.for('GetRaceResultUsecase'),
+  RaceResultRepository: Symbol.for('RaceResultRepository'),
 }
 
 export default TYPES
