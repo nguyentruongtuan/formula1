@@ -2,6 +2,7 @@ import TYPES from '@bootstrap/types';
 import { inject, injectable } from "inversify";
 import { Driver } from 'src/model/driver';
 import { CreateDriverRequest } from 'src/requests/create-driver-request';
+import { GetDriversRequest } from 'src/requests/get-drivers-request';
 import { UpdateDriverRequest } from 'src/requests/update-driver-request';
 import { CreateDriverUsecase } from 'src/usecase/create-driver-usecase';
 import { DeleteDriverUsecase } from 'src/usecase/delete-driver-usecase';
@@ -20,8 +21,9 @@ export class DriverController {
     @inject(TYPES.UpdateDriverUsecase) private readonly updateDriverUsecase: UpdateDriverUsecase,
   ) {}
 
-  public async getDrivers(): Promise<Driver[]> {
-    return this.getDriverUsecase.execute()
+  public async getDrivers(ctx): Promise<Driver[]> {
+    const request: GetDriversRequest = { filter: ctx.request.query }
+    return this.getDriverUsecase.execute(request)
   }
 
   public async getDriver(ctx): Promise<Driver> {

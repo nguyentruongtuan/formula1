@@ -10,7 +10,7 @@ export interface Driver {
   grandsPrixEntered: number
   worldChampionships: string
   highestRaceFinish: string
-  highestGridPosition: string
+  highestGridPosition: number
   dateOfBirth: string
   placeOfBirth: string
 }
@@ -25,7 +25,7 @@ export const DriverModel = mongoose.model<Driver>('Driver', new mongoose.Schema(
   grandsPrixEntered: Number,
   worldChampionships: String,
   highestRaceFinish: String,
-  highestGridPosition: String,
+  highestGridPosition: Number,
   dateOfBirth: String,
   placeOfBirth: String,
 }))
