@@ -1,10 +1,7 @@
 import { inject, injectable } from "inversify";
 import TYPES from "src/bootstrap/types";
-import { Driver, DriverModel } from "src/model/driver";
-import { Race, RaceModel } from "src/model/race";
-import { RaceEvent } from "src/model/race-event";
-import { RaceResult } from "src/model/race-result";
 import { SearchRequest } from "src/requests/search-request";
+import { SearchResponse } from "src/responses/search-response";
 import { SearchEntitiesUsecase } from "src/usecase/search-entities-usecase";
 
 @injectable()
@@ -14,7 +11,7 @@ export class SearchController {
     @inject(TYPES.SearchEntitiesUsecase) private readonly searchEntitiesUsecase: SearchEntitiesUsecase
   ) {}
 
-  public async search(ctx): Promise<Array<Race | Driver | RaceEvent | RaceResult>> {
+  public async search(ctx): Promise<SearchResponse> {
 
     const request: SearchRequest = ctx.request.query
 

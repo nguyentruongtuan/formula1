@@ -20,7 +20,7 @@ exports.up = function (next) {
       const data = JSON.parse(fs.readFileSync(path.join(driverDir, __file)).toString())
       const driver = {
         name: data.name,
-        biography: data.name,
+        biography: data.biography,
         country: '',
         podiums: '',
         points: '',

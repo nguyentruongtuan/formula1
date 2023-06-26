@@ -1,8 +1,5 @@
-import { Driver } from "src/model/driver";
-import { Race } from "src/model/race";
-import { RaceEvent } from "src/model/race-event";
-import { RaceResult } from "src/model/race-result";
+import { SearchResponse } from "src/responses/search-response";
 
 export interface EntitySeachGateway {
-  searchByKeyword(keyword: string) : Promise<Array<Race | RaceEvent | RaceResult | Driver >>
+  searchByKeyword(keyword: string): Promise<SearchResponse>
 }
