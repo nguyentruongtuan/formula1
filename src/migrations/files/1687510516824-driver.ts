@@ -22,12 +22,12 @@ exports.up = function (next) {
         name: data.name,
         biography: data.biography,
         country: '',
-        podiums: '',
-        points: '',
-        grandsPrixEntered: '',
+        podiums: undefined,
+        points: undefined,
+        grandsPrixEntered: undefined,
         worldChampionships: '',
         highestRaceFinish: '',
-        highestGridPosition: '',
+        highestGridPosition: undefined,
         dateOfBirth: '',
         placeOfBirth: '',
       }
@@ -35,7 +35,14 @@ exports.up = function (next) {
       // const statTeam = data.stat.find(stat => stat.statKey === 'Team')
 
       data.stat?.forEach(stat => {
-        driver[_.camelCase(stat.statKey)] = stat.statValue
+        if (_.camelCase(stat.statKey) === 'dateOfBirth') {
+          const dString = stat.statValue.split('/')
+          driver[_.camelCase(stat.statKey)] = new Date(dString[2], dString[1], dString[0])
+        } else if (['podiums', 'points', 'grandsPrixEntered', 'highestGridPosition'].indexOf(_.camelCase(stat.statKey)) !== -1) {
+          driver[_.camelCase(stat.statKey)] = Number(stat.statValue)
+        } else {
+          driver[_.camelCase(stat.statKey)] = String(stat.statValue)
+        }
       });
 
       const team = allTeams.find(__team => {

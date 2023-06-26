@@ -39,14 +39,7 @@ export class AppRouter {
     router.get('/teams/:id', async (ctx) => { ctx.body = await this.teamController.getTeam(ctx) })
 
   
-    router.get('/drivers', async (ctx) => { ctx.body = await this.driverController.getDrivers() })
-    router.post('/drivers', async (ctx) => { ctx.body = await this.driverController.createDriver(ctx) })
-    router.delete('/drivers/:id', async (ctx) => { ctx.body = await this.driverController.deleteDriver(ctx) })
-    router.put('/drivers/:id', async (ctx) => { ctx.body = await this.driverController.updateDriver(ctx) })
-    router.get('/drivers/:id', async (ctx) => { ctx.body = await this.driverController.getDriver(ctx) })
-
-  
-    router.get('/drivers', async (ctx) => { ctx.body = await this.driverController.getDrivers() })
+    router.get('/drivers', async (ctx) => { ctx.body = await this.driverController.getDrivers(ctx) })
     router.post('/drivers', async (ctx) => { ctx.body = await this.driverController.createDriver(ctx) })
     router.delete('/drivers/:id', async (ctx) => { ctx.body = await this.driverController.deleteDriver(ctx) })
     router.put('/drivers/:id', async (ctx) => { ctx.body = await this.driverController.updateDriver(ctx) })
