@@ -38,6 +38,10 @@ import { RaceResultController } from 'src/controller/race-result-controller'
 import { RaceEventRepository, RaceEventRepositoryImpl } from 'src/repository/race-event-repository'
 import { RaceResultRepository, RaceResultRepositoryImpl } from 'src/repository/race-result-repository'
 import { SearchController } from 'src/controller/search-controller'
+import { SearchEntitiesUsecase } from 'src/usecase/search-entities-usecase'
+import { EntitySeachGateway } from 'src/gateway/entity-seach-gateway'
+import { EntitySearchMongooseImpl } from 'src/gateway/mongoose/entity-search-mongoose-impl'
+import { SearchRepository, SearchRepositoryImpl } from 'src/repository/search-repository'
 
 
 const container = new Container()
@@ -55,12 +59,14 @@ container.bind<TeamRepository>(TYPES.TeamRepository).to(TeamRepositoryImpl)
 container.bind<DriverRepository>(TYPES.DriverRepository).to(DriverRepositoryImpl)
 container.bind<RaceEventRepository>(TYPES.RaceEventRepository).to(RaceEventRepositoryImpl)
 container.bind<RaceResultRepository>(TYPES.RaceResultRepository).to(RaceResultRepositoryImpl)
+container.bind<SearchRepository>(TYPES.SearchRepository).to(SearchRepositoryImpl)
 
 container.bind<TeamGateway>(TYPES.TeamGateway).to(TeamMongooseImpl)
 container.bind<DriverGateway>(TYPES.DriverGateway).to(DriverMongooseImpl)
 container.bind<RaceEventGateway>(TYPES.RaceEventGateway).to(RaceEventMongooseImpl)
 container.bind<RaceGateway>(TYPES.RaceGateway).to(RaceMongooseImpl)
 container.bind<RaceResultGateway>(TYPES.RaceResultGateway).to(RaceResultMongooseImpl)
+container.bind<EntitySeachGateway>(TYPES.EntitySeachGateway).to(EntitySearchMongooseImpl)
 
 container.bind<DeleteTeamUseCase>(TYPES.DeleteTeamUseCase).to(DeleteTeamUseCase)
 container.bind<GetTeamUsecase>(TYPES.GetTeamUsecase).to(GetTeamUsecase)
@@ -78,5 +84,6 @@ container.bind<GetRaceResultsUsecase>(TYPES.GetRaceResultsUsecase).to(GetRaceRes
 container.bind<GetRacesUsecase>(TYPES.GetRacesUsecase).to(GetRacesUsecase)
 container.bind<GetRaceUsecase>(TYPES.GetRaceUsecase).to(GetRaceUsecase)
 container.bind<GetRaceEventUsecase>(TYPES.GetRaceEventUsecase).to(GetRaceEventUsecase)
+container.bind<SearchEntitiesUsecase>(TYPES.SearchEntitiesUsecase).to(SearchEntitiesUsecase)
 
 export default container

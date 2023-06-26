@@ -40,10 +40,13 @@ const TYPES = {
   GetRaceResultsUsecase: Symbol.for('GetRaceResultsUsecase'),
   GetRaceResultUsecase: Symbol.for('GetRaceResultUsecase'),
   RaceResultRepository: Symbol.for('RaceResultRepository'),
+  SearchRepository: Symbol.for('SearchRepository'),
 
 
   // ==== Search
-  SearchController: Symbol.for('SearchController')
+  SearchController: Symbol.for('SearchController'),
+  SearchEntitiesUsecase: Symbol.for('SearchEntitiesUsecase'),
+  EntitySeachGateway: Symbol.for('EntitySeachGateway')
 }
 
 export default TYPES
