@@ -2,6 +2,19 @@
 A demo restful API 
 
 
+# Pre-setup
+
+create a folder name app under {project folder}
+```
+mkdir app
+```
+
+Get code 
+```
+cd app
+git clone https://github.com/nguyentruongtuan/formula1.git .
+```
+
 # Setup
 
 ### With Docker
